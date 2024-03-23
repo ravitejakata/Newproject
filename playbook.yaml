@@ -1,0 +1,16 @@
+---
+- hosts: all
+  become: yes
+  name: create directory and change file permissions
+
+  tasks:
+    - name: creating dir
+      file:
+        path: /opt/ansiproject/dir
+        state: directory
+        mode: 700
+
+    - name: change file permissions
+      file:
+        path: /opt/ansiproject/dir
+        mode: 766
